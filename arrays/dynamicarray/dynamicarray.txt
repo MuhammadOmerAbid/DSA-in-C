@@ -1,0 +1,63 @@
+Dynamic Array (XOR Queries)
+
+You are given an integer n, and you need to create n empty sequences (arrays), all initially empty and zero-indexed.
+
+Also, initialize an integer:
+
+lastAnswer = 0
+
+You are then given q queries, and you must process them one by one.
+
+Each query is in one of the following two formats:
+
+Query Type 1:
+1 x y
+
+Steps:
+
+Compute:
+
+idx = (x XOR lastAnswer) % n
+Append the value y to arr[idx].
+Query Type 2:
+2 x y
+
+Steps:
+
+Compute:
+
+idx = (x XOR lastAnswer) % n
+
+Find:
+
+value = arr[idx][ y % size(arr[idx]) ]
+
+Set:
+
+lastAnswer = value
+Store lastAnswer in the answers list.
+Notes:
+^ represents the bitwise XOR operation.
+% is the modulo operator.
+size(arr[idx]) is the number of elements in that sequence.
+It is guaranteed that no query will access an empty sequence in Type 2.
+Output:
+
+Return the list of all values obtained from Type 2 queries, in the order they appear.
+
+Input Format:
+n q
+query1
+query2
+...
+queryq
+Sample Input:
+2 5
+1 0 5
+1 1 7
+1 0 3
+2 1 0
+2 1 1
+Sample Output:
+7
+3
