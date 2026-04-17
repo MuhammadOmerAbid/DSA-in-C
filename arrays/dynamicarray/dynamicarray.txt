@@ -51,6 +51,7 @@ query1
 query2
 ...
 queryq
+
 Sample Input:
 2 5
 1 0 5
@@ -58,6 +59,7 @@ Sample Input:
 1 0 3
 2 1 0
 2 1 1
+
 Sample Output:
 7
 3
